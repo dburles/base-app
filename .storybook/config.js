@@ -1,6 +1,6 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
-import Global from '../components/utils/Global';
+import GlobalStyles from '../components/utils/GlobalStyles';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../components', true, /.stories.js$/);
@@ -9,9 +9,10 @@ function loadStories() {
 }
 
 addDecorator(story => (
-  <Global>
+  <>
+    <GlobalStyles />
     {story()}
-  </Global>
+  </>
 ));
 
 configure(loadStories, module);

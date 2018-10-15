@@ -1,6 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import Global from '../components/utils/Global';
+import GlobalStyles from '../components/utils/GlobalStyles';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -17,9 +17,8 @@ export default class MyApp extends App {
 
     return (
       <Container>
-        <Global>
-          <Component {...pageProps} />
-        </Global>
+        <GlobalStyles />
+        <Component {...pageProps} />
       </Container>
     );
   }
