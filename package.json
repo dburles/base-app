@@ -14,13 +14,17 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "apollo-boost": "^0.1.17",
+    "dotenv-webpack": "^1.5.7",
+    "graphql": "^14.0.2",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
+    "react-apollo": "^2.2.4",
     "react-dom": "^16.5.2",
     "rebass": "^3.0.0-9",
     "styled-components": "^4.0.0-beta.11.3",
-    "styled-jsx": "^3.1.0",
     "styled-system": "^3.1.11"
   },
   "devDependencies": {

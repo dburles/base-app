@@ -1,8 +1,10 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import { ApolloProvider } from 'react-apollo';
 import GlobalStyles from '../components/utils/GlobalStyles';
+import withApolloClient from '../lib/with-apollo-client';
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
 
@@ -13,13 +15,17 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, apolloClient } = this.props;
 
     return (
       <Container>
-        <GlobalStyles />
-        <Component {...pageProps} />
+        <ApolloProvider client={apolloClient}>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </ApolloProvider>
       </Container>
     );
   }
 }
+
+export default withApolloClient(MyApp);
